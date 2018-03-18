@@ -4,6 +4,8 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -119,6 +122,10 @@ public class EngineeringFragment extends Fragment implements ImageView.OnClickLi
         more = customView.findViewById(R.id.more);
         title = customView.findViewById(R.id.title);
 
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.update();
         closePopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

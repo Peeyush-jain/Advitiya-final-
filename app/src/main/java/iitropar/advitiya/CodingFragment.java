@@ -4,6 +4,8 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 
 import android.os.Bundle;
@@ -117,6 +119,11 @@ public class CodingFragment extends Fragment implements ImageView.OnClickListene
         rules = customView.findViewById(R.id.rules);
         more = customView.findViewById(R.id.more);
         title = customView.findViewById(R.id.title);
+
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.update();
 
         closePopupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
