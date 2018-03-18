@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Advitiya-final-.iml" filepath="$PROJECT_DIR$/Advitiya-final-.iml" />
-      <module fileurl="file://C:\Users\Harshita Modi\AndroidStudioProjects\Advitiya-final-\Advitiya_2k18.iml" filepath="C:\Users\Harshita Modi\AndroidStudioProjects\Advitiya-final-\Advitiya_2k18.iml" />
-      <module fileurl="file://C:\Users\frien_000\Desktop\Android Apps\Advitiya_2k18\advitiya.iml" filepath="C:\Users\frien_000\Desktop\Android Apps\Advitiya_2k18\advitiya.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Harshita Modi\AndroidStudioProjects\Advitiya-final-\app\app.iml" filepath="C:\Users\Harshita Modi\AndroidStudioProjects\Advitiya-final-\app\app.iml" />
     </modules>
   </component>
 </project>

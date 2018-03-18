@@ -67,7 +67,7 @@
             android:value="@string/google_maps_key" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/ic_zeitgeist" />
+            android:resource="@mipmap/ic_launcher" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
