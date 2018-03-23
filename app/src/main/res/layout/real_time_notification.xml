@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
+    android:paddingBottom="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="8dp">
+    android:paddingTop="10dp">
 
     <ImageView
         android:id="@+id/notificationDp"
@@ -21,9 +21,9 @@
         android:id="@+id/notificationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#444444"
+        android:textColor="#000000"
         android:text="Desi Beats Finals (Choreonite)"
-        android:textSize="14sp"
+        android:textSize="16dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/notificationDp"
         android:layout_toEndOf="@+id/notificationDp"
@@ -34,11 +34,11 @@
         android:id="@+id/notificationCurrentTime"
         android:layout_width="wrap_content"
         android:text="22:00"
-        android:textSize="12sp"
+        android:textColor="#666666"
+        android:textSize="12dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:layout_alignRight="@id/notificationTitle"
         android:layout_alignEnd="@+id/notificationTitle"
         android:layout_alignParentRight="true"/>
@@ -48,7 +48,8 @@
         <TextView
             android:id="@+id/notification_description"
             android:text="Convocation Hall"
-            android:textSize="10sp"
+            android:textColor="#666666"
+            android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

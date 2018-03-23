@@ -9,6 +9,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.icu.util.MeasureUnit;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationManagerCompat;
@@ -49,10 +50,10 @@ public class FirebaseMessage extends FirebaseMessagingService {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
         // Check if message contains Results data payload.
-        if (remoteMessage.getData().size() > 0) {
+/*        if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
 
-            if (/* Check if data needs to be processed by long running job */ true) {
+            if (// Check if data needs to be processed by long running job // true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
                 // scheduleJob();
             } else {
@@ -61,20 +62,25 @@ public class FirebaseMessage extends FirebaseMessagingService {
             }
 
         }
-
+*/
         // Check if message contains Results notification payload.
         if (remoteMessage.getNotification() != null) {
             Random random = new Random();
             int NOTIFICATION_ID = random.nextInt(99999 - 1000) + 1000;
+            Log.d(TAG, "Message Notification Body: Not set");
             String time = getTime(remoteMessage.getSentTime());
             String description = remoteMessage.getNotification().getBody();
-            String title = remoteMessage.getNotification().getTitle();
 
+            String title="Advitiya'18";
+            if(remoteMessage.getNotification().getTitle()!="")
+                title = remoteMessage.getNotification().getTitle();
             Log.d(TAG, "Message Notification Body: " + description);
 
             Notification.Builder builder = new Notification.Builder(this);
             final RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.real_time_notification);
             contentView.setTextViewText(R.id.notificationTitle, title);
+/*            contentView.setTextColor(R.id.notificationTitle,getResources().getColor(
+                    R.color.black));*/
             contentView.setTextViewText(R.id.notification_description, description);
             contentView.setTextViewText(R.id.notificationCurrentTime,time);
             builder.setSmallIcon(R.drawable.ic_launcher);
@@ -110,7 +116,7 @@ public class FirebaseMessage extends FirebaseMessagingService {
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(milliseconds);
-        SimpleDateFormat df2 = new SimpleDateFormat("hh:mm Results");
+        SimpleDateFormat df2 = new SimpleDateFormat("hh:mm aaa");
         String formattedDate = df2.format(calendar.getTime());
 
         return formattedDate ;

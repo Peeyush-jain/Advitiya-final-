@@ -26,12 +26,20 @@
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
 
         <activity android:name=".ScheduleDay"
             android:theme="@style/MyActionBar"
             android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"
             >
         </activity>
 
@@ -40,7 +48,7 @@
             android:name=".MyReceiver"
             android:enabled="true"
             android:exported="false" />
-
+<!--
         <service
             android:name=".NotificationService"
             android:exported="false" />
@@ -48,7 +56,7 @@
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
-        </service>
+        </service>-->
         <service android:name=".FirebaseMessage">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -74,69 +82,68 @@
 
         <activity android:name=".AboutAdivitya"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".ContactUS"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".Developers" />
+        <activity android:name=".Developers"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".Sponsors"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".Results"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".Competition"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
 
 
 
-        <receiver
+   <!--     <receiver
             android:name=".RealTimeNotificationReceiver"
             android:enabled="true"
             android:exported="true" />
-
+-->
         <activity
             android:name=".Talks"
             android:screenOrientation="portrait"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity">
+            android:parentActivityName=".SpaceActivity"
+            >
            </activity>
 
         <activity android:name=".Workshop"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity" >
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait">
         </activity>
 
         <activity android:name=".SpaceActivity"
             android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
 
         <activity android:name=".Accomodation"
             android:theme="@style/MyActionBar"
-            android:parentActivityName=".SpaceActivity"/>
-
-        <activity android:name=".TemporaryActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
-
-        </activity>
+            android:parentActivityName=".SpaceActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

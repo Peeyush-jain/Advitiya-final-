@@ -18,7 +18,7 @@ public class SliderAdapter extends PagerAdapter {
         this.context = context ;
     }
     public int[] slider_images = {
-            R.drawable.web_harrdy,R.drawable.samar ,R.drawable.rj_naved  , R.drawable.divyanshu_damani ,R.drawable.djray
+            R.drawable.web_harrdy, R.drawable.biswa , R.drawable.samar ,R.drawable.rj_naved  ,R.drawable.divyanshu_damani ,R.drawable.djray
 
     };
 

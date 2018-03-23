@@ -27,7 +27,7 @@ public class Talks extends AppCompatActivity {
         setBackgroundwithstars();
         mSlideViewPager =  findViewById(R.id.slideViewPager);
         mDotLayout = findViewById(R.id.dots);
-        getSupportActionBar().setTitle("Talks and Pronites");
+        getSupportActionBar().setTitle("Talks and Stars");
         sliderAdapter = new SliderAdapter(this);
         mSlideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
@@ -38,7 +38,7 @@ public class Talks extends AppCompatActivity {
 
     public void addDotsIndicator(int position){
         if (addDot) {
-            mDots = new TextView[5];
+            mDots = new TextView[6];
             for (int i = 0; i < mDots.length; i++) {
                 mDots[i] = new TextView(this);
                 mDots[i].setText(Html.fromHtml("&#8226;"));

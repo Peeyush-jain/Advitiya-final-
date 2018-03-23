@@ -1,5 +1,7 @@
 package iitropar.advitiya;
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 
 import android.graphics.Color;
@@ -51,15 +53,23 @@ public class ScheduleDay1 extends Fragment {
     private Button refreshButton ;
     private ProgressBar progressBar ;
     private int daynumber ;
-
+    android.support.v4.app.FragmentManager manager;
     View myView;
     Context mainContext;
+    Activity activity;
     private ImageView young_scientist, design_simulate, one_ohm , flight_show , water_rocket ;
+    @Override
+    public void onAttach(Context cont){
+        super.onAttach(cont);
+        mainContext=cont;
+        activity=(Activity) cont;
+    }
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         myView = inflater.inflate(R.layout.scheduleday1, container, false);
-        mainContext = myView.getContext();
+        //mainContext = myView.getContext();
+        manager=getActivity().getSupportFragmentManager();
         setHasOptionsMenu(true);
         progressBar = myView.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.INVISIBLE);
@@ -102,7 +112,7 @@ public class ScheduleDay1 extends Fragment {
             eventList = dba.getDataDay(daynumber);
 
             if (eventList.size() != 0){
-                eventAdapter = new EventAdapter(context, eventList, getActivity().getSupportFragmentManager());
+                eventAdapter = new EventAdapter(context, eventList, manager);
                 layoutManager = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -122,8 +132,8 @@ public class ScheduleDay1 extends Fragment {
                         //we are connected to Results network
                         //Intent intent = new Intent(getApplicationContext(), ScheduleDay.class);
                         //startActivity(intent);
-                        getActivity().finish();
-                        startActivity(getActivity().getIntent());
+                       activity.finish();
+                        startActivity(activity.getIntent());
                     }
 
                 }
@@ -177,7 +187,7 @@ public class ScheduleDay1 extends Fragment {
 
                             }
                             eventList = dba.getDataDay(daynumber);
-                            eventAdapter = new EventAdapter(context, eventList, getActivity().getSupportFragmentManager());
+                            eventAdapter = new EventAdapter(context, eventList, manager);
                             layoutManager = new LinearLayoutManager(getContext());
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());

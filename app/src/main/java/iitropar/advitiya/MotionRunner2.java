@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Handler;
+import android.support.v4.view.ViewCompat;
 import android.util.Log;
 import android.view.View;
 
@@ -129,6 +130,7 @@ public class MotionRunner2 extends View {
         for(int i=0;i<numPlanets;i++)
         {
             new_Planets[i].setBounds(0,0,2*planetRadius,2*planetRadius);
+
         }
         // Set up the Paint object that will control format of screen draws
         paint = new Paint();
@@ -158,6 +160,7 @@ public class MotionRunner2 extends View {
     }
     public void startAnimation(){
         mState = RUNNING;
+        final MotionRunner2 a=this;
 
         new Thread(new Runnable() {
             public void run() {
@@ -166,7 +169,6 @@ public class MotionRunner2 extends View {
 
                     // Update the X and Y coordinates for all planets
                     newXY();
-
                     // The method Thread.sleep throws an InterruptedException if Thread.interrupt()
                     // were to be issued while thread is sleeping; the exception must be caught.
                     try {

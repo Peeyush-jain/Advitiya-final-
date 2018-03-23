@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,9 +15,11 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -36,8 +39,7 @@ public class SpaceActivity extends AppCompatActivity implements View.OnClickList
     private int RadiusLength;
     private boolean called;
     private String[] events={"COMPETITION","WORKSHOP","TALKS/STARS","SCHEDULE","MUN"};
-    private NavigationView navigationView ;
-
+    private NavigationView navigationView;
     private DrawerLayout draw;
 
     @Override
@@ -88,7 +90,6 @@ public class SpaceActivity extends AppCompatActivity implements View.OnClickList
         if (layout == null)
             Log.d("Animator", "something is null");
         contex=this;
-        layout.addView(mrunner);
         layout.setBackgroundColor(0xF0000000);
         mrunner.height = RelativeLayout.LayoutParams.MATCH_PARENT;
         Log.d("height","mrunner"+mrunner.height);
@@ -136,8 +137,6 @@ public class SpaceActivity extends AppCompatActivity implements View.OnClickList
         draw=layout.findViewById(id.drawer_layout);
         //ViewCompat.setTranslationZ(draw,100);
         draw.addDrawerListener(this);
-        ViewCompat.setTranslationZ(mrunner,5);
-
         for(int i=0;i<R0.length;i++){
             buttons[i]=new Button(a);
             RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(
@@ -163,11 +162,13 @@ public class SpaceActivity extends AppCompatActivity implements View.OnClickList
                 buttons[i].setBackgroundDrawable(getResources().getDrawable(drawable.roundbutton));
             }
         }
+
         //layout.setVisibility(View.VISIBLE);
         //setContentView(layout);
         ButtonSet=true;
         RadiusLength=R0.length;
 
+        layout.addView(mrunner);
 
     }
     public void deleteViews(){
